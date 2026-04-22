@@ -95,7 +95,7 @@ else:
         elif val == "Upcoming": return "background-color: #ccffcc"
         return ""
 
-    styled_df = df.style.applymap(color_status, subset=["Status"])
+    styled_df = df.style.map(color_status, subset=["Status"])
     st.dataframe(styled_df, use_container_width=True, hide_index=True)
 
     # Summary
