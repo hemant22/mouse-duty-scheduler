@@ -16,13 +16,13 @@ except Exception as e:
 # Your task owner mapping (same as before)
 task_owner_map = {
     'Surgery Date': 'Chung-wei',
-    'ABR Baseline 1 Date (-3)': 'Kunpeng',
-    'ABR Baseline 2 Date (-1)': 'Kunpeng',
-    'NIHL Date (0)': 'Tinghan',
-    'Exposed ABR1 Date (+1)': 'Kunpeng',
-    'Exposed ABR 2 Date (+3)': 'Kunpeng',
-    'Exposed ABR3 Date (+13)': 'Kunpeng',
-    'Exposed ABR3 Date (+15)': 'Kunpeng',
+    'ABR Baseline 1 (Day -3)': 'Kunpeng',
+    'ABR Baseline 2 (Day -1)': 'Kunpeng',
+    'NIHL (0)': 'Tinghan',
+    'Exposed ABR1  (Day +1)': 'Kunpeng',
+    'Exposed ABR 2  (Day +3)': 'Kunpeng',
+    'Exposed ABR3 (Day +13)': 'Kunpeng',
+    'Exposed ABR3  (Day +15)': 'Kunpeng',
 }
 
 id_col = 'Mouse ID'
