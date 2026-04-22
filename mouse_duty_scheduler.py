@@ -4,13 +4,13 @@ from datetime import datetime, timedelta
 
 st.set_page_config(page_title="Mouse Duty Scheduler", layout="wide")
 st.title("🐭 Mouse Duty Scheduler")
-st.markdown("Backend: **book.xlsx** (place it in the same folder as this app)")
+st.markdown("Backend: **Book.xlsx** (place it in the same folder as this app)")
 
 # Load data (with error handling)
 try:
-    tbl = pd.read_excel("book.xlsx")
+    tbl = pd.read_excel("Book.xlsx")
 except Exception as e:
-    st.error(f"Could not read book.xlsx: {e}")
+    st.error(f"Could not read Book.xlsx: {e}")
     st.stop()
 
 # Your task owner mapping (same as before)
