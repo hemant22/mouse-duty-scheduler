@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 
 st.set_page_config(page_title="Mouse Duty Scheduler", layout="wide")
 st.title("🐭 Mouse Duty Scheduler")
-st.markdown("Backend: **Book.xlsx** (place it in the same folder as this app)")
+st.markdown("Backend: **Book.xlsx** ")
 
 # Load data (with error handling)
 try:
