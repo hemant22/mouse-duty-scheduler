@@ -296,11 +296,8 @@ if mobile_view:
             card_class   = "duty-card"; title_class = "duty-title"; row_class = "duty-row"
 
         st.markdown(f'<div class="{card_class}">', unsafe_allow_html=True)
-        col_check, col_content = st.columns([0.08, 0.92])
+        col_content, col_check = st.columns([0.75, 0.25])
 
-        with col_check:
-            checked = st.checkbox("Done", value=is_done,
-                                  key=f"chk_{task_key}", label_visibility="collapsed")
         with col_content:
             st.markdown(f'''
                 <div class="{status_class}">{status_label}</div>
@@ -311,6 +308,11 @@ if mobile_view:
                 <div class="{row_class}"><b>Arrival Date:</b> {r["Arrival Date"]}</div>
                 <div class="{row_class}"><b>Owner:</b> {r["Person"]}</div>
             ''', unsafe_allow_html=True)
+
+        with col_check:
+            st.markdown("<div style='height:0.5rem'></div>", unsafe_allow_html=True)
+            checked = st.checkbox("☑️ Please check if job finished", value=is_done,
+                                  key=f"chk_{task_key}")
 
         st.markdown('</div>', unsafe_allow_html=True)
 
