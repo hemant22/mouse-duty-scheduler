@@ -39,6 +39,7 @@ people = sorted(set(task_owner_map.values()))
 selected_person = st.sidebar.selectbox("Person", people)
 days_ahead = st.sidebar.number_input("Upcoming within days", min_value=1, value=14)
 show_all = st.sidebar.checkbox("Show all duties (including Future)", value=False)
+today_only = st.sidebar.button("📅 Show Today Only")
 
 # Build the duty data (almost identical logic to your buildDutyData)
 today = datetime.today().date()
@@ -71,8 +72,13 @@ for _, row in tbl.iterrows():
         else:
             status = "Future"
 
-        if not show_all and status == "Future":
-            continue
+        if today_only:
+            if status != "Today":
+                continue
+        else:
+            if not show_all and status == "Future":
+                continue
+            
 
         rows.append({
             "Status": status,
