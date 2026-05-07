@@ -86,7 +86,11 @@ st.markdown('<div class="top-caption">Fancy dashboard from <b>Book.xlsx</b>. Sho
 # GitHub config for completed-task persistence
 # ============================================================
 def github_is_configured():
-    return "github" in st.secrets
+    try:
+        return "github" in st.secrets
+    except Exception:
+        # No secrets.toml present (e.g. running locally without GitHub config) -> just disable persistence.
+        return False
 
 if github_is_configured():
     GITHUB_TOKEN  = st.secrets["github"].get("token", "")
